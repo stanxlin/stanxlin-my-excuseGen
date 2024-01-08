@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Excuse Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      function generateExcuses() {
+        const who = ["The dog", "My grandma", "His turtle", "My bird"];
+        const action = ["ate", "peed", "crushed", "broke"];
+        const what = ["my homework", "the keys", "the car"];
+        const when = [
+          "before the class",
+          "right on time",
+          "when I finished",
+          "during my lunch",
+          "while I was praying",
+        ];
+
+        function getFromArray(array) {
+          const randomNum = Math.floor(Math.random() * array.length);
+          return array[randomNum];
+        }
+
+        const getWho = getFromArray(who);
+        const getAction = getFromArray(action);
+        const getWhat = getFromArray(what);
+        const getWhen = getFromArray(when);
+
+        const excuse = `${getWho} ${getAction} ${getWhat} ${getWhen}`;
+
+        document.getElementById(
+          "excuse"
+        ).innerHTML = `You might not believe me but... ${excuse}`;
+      }
+
+      window.onload = generateExcuse;
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <p id="excuse"></p>
+    </div>
+  </body>
+</html>
